@@ -10,7 +10,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "run-script-os",
-    "build:default": "env-cmd -f ./automation/ts-node.env.js node --max_old_space_size=4096 node_modules/.bin/webpack --config ./automation/webpack.prod.ts",
+    "build:default": "env-cmd -f ./automation/ts-node.env.js node node_modules/.bin/webpack --config ./automation/webpack.prod.ts",
     "build:windows": "env-cmd -f ./automation/ts-node.env.js node --max_old_space_size=4096 node_modules/webpack/bin/webpack.js --config ./automation/webpack.prod.ts",
     "bundle-stats": "npm-run-all bundle-stats:build bundle-stats:show",
     "bundle-stats:build": "run-script-os",
