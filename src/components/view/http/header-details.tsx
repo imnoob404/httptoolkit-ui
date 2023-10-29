@@ -82,7 +82,7 @@ export const HeaderDetails = inject('accountStore')(observer((props: {
     requestUrl: URL,
     accountStore?: AccountStore
 }) => {
-    const sortedHeaders = _.sortBy(props.headers, ([key]) => key.toLowerCase());
+    const sortedHeaders = [...props.headers];
 
     return sortedHeaders.length === 0 ?
         <BlankContentPlaceholder>(None)</BlankContentPlaceholder>
