@@ -44,8 +44,8 @@ export const rawHeadersToHeaders = (headers: RawHeaders): Headers =>
  */
 export const getHeaderValue = (headers: Headers | RawHeaders, headerKey: string): string | undefined => {
     if (Array.isArray(headers)) {
-        headerKey = headerKey.toLowerCase();
-        const headerPair = _.findLast(headers, ([key]) => key.toLowerCase() === headerKey);
+        //headerKey = headerKey.toLowerCase();
+        const headerPair = _.findLast(headers, ([key]) => key.toLowerCase() === headerKey.toLowerCase());
         return headerPair?.[1];
     } else {
         const headerValue = headers[headerKey];
@@ -64,8 +64,8 @@ export const getHeaderValue = (headers: Headers | RawHeaders, headerKey: string)
  */
 export const getHeaderValues = (headers: Headers | RawHeaders, headerKey: string): string[] => {
     if (Array.isArray(headers)) {
-        headerKey = headerKey.toLowerCase();
-        return headers.filter(([key]) => key.toLowerCase() === headerKey).map(([_, value]) => value);
+        //headerKey = headerKey.toLowerCase();
+        return headers.filter(([key]) => key.toLowerCase() === headerKey.toLowerCase()).map(([_, value]) => value);
     } else {
         const headerValue = headers[headerKey];
 
