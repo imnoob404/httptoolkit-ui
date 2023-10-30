@@ -330,7 +330,7 @@ export class HttpExchange extends HTKEventBase {
             response.statusCode.toString(),
             response.statusMessage.toString(),
             ..._.map(response.headers, (value, key) => `${key}: ${value}`)
-        ].join('\n').toLowerCase();
+        ].join('\n');
 
         // Wrap the API promise to also add this response data (but lazily)
         const requestApiPromise = this._apiPromise;
