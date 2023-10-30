@@ -213,7 +213,7 @@ export class HttpExchange extends HTKEventBase {
         .concat(..._.map(this.request.headers, (value, key) => `${key}: ${value}`))
         .concat(this.request.method)
         .join('\n')
-        .toLowerCase();
+        //.toLowerCase();
 
         // Start loading the relevant Open API specs for this request, if any.
         this._apiMetadataPromise = apiStore.getApi(this.request);
