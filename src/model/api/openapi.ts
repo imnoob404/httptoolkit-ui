@@ -151,7 +151,7 @@ export function getParameters(
                 case 'header':
                     return {
                         ...commonFields,
-                        value: request.headers[param.name.toLowerCase()]
+                        value: request.headers[param.name]
                     }
 
                 // TODO: Match in:cookie too (but currently no example in the specs)
