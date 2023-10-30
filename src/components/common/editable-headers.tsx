@@ -39,8 +39,8 @@ const stripPseudoHeadersAndLowercase = (headers: PairsArray): PairsArray =>
     // Lowercase header keys, and strip any leading colons - HTTP/2 headers should never be entered raw
     headers.map(({ key, value, disabled }) => ({
         key: !disabled && key.startsWith(':')
-            ? key.slice(1).toLowerCase()
-            : key.toLowerCase(),
+            ? key.slice(1)
+            : key,
         value,
         disabled
     }));
