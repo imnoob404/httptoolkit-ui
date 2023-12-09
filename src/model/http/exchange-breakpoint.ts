@@ -205,7 +205,7 @@ export abstract class Breakpoint<T extends BreakpointInProgress> {
 
             // Psuedo-headers those will be generated automatically from the other,
             // fields, as part of the rest of the request process.
-            headers: omitPsuedoHeaders(rawHeadersToHeaders(this.resultMetadata.rawHeaders))
+            headers: rawHeadersToHeaders(this.resultMetadata.rawHeaders)
         } as unknown as BreakpointResumeType<T>);
     }
 
