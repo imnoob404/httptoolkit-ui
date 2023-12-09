@@ -24,7 +24,7 @@ export const headersToRawHeaders = (headers: Headers): RawHeaders =>
 
 export const rawHeadersToHeaders = (headers: RawHeaders): Headers =>
     headers.reduce((headersObj: { [k: string]: string | string[] }, [key, value]) => {
-        const headerName = key.toLowerCase();
+        const headerName = key;
 
         const existingValue = headersObj[headerName];
         if (existingValue === undefined) {
